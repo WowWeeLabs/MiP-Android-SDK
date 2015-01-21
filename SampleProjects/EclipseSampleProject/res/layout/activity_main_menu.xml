@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center" 
+    android:background="#ffffff">
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:text="MIP Android Sample Project"/>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+    	android:gravity="center">
+	    <TextView
+	        android:id="@+id/no_bt_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:paddingBottom="20dp"
+	        android:textColor="#000000"
+	        android:text="Please turn on your bluetooth in settings." 
+	        android:visibility="invisible"/>
+	    
+	    <TextView 
+	        android:id="@+id/connect_text"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginBottom="20dp"
+	        android:textSize="20sp"
+	        android:textColor="#000000"
+	        android:text="No MiP found."
+	        />
+		<Button 
+		    android:id="@+id/playsound"
+		    android:text="Play Sound"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="buttonOnclickHandler"/>
+		
+		<Button
+		    android:id="@+id/changechest"
+		    android:text="Change Chest RGB to Yellow"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="buttonOnclickHandler"/>
+		
+		<Button 
+		    android:id="@+id/fallover"
+		    android:text="Fallover"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="buttonOnclickHandler"/>
+		
+		<Button 
+		    android:id="@+id/drive"
+		    android:text="Drive"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="buttonOnclickHandler"/>
+		
+	</LinearLayout>
+	
+	<FrameLayout
+        android:id="@+id/view_id_drive_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
