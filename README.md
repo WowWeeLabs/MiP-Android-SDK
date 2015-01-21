@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 WowWee MiP Android SDK
 ================================
 
