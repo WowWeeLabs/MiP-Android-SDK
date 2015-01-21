@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 WowWee MiP Android SDK
 ================================
 
@@ -269,3 +270,7 @@ Projects using this SDK
 ---------------------------------
 * [WowWee MiP Official App](https://play.google.com/store/apps/details?id=com.wowwee.mip&hl=en)
 * Send us a pull request to add your app here
+=======
+# MiP-Android-SDK
+Complete Android SDK and Demo project for WowWee MiP.
+>>>>>>> 671355d72a49df24eb3326e2b10dea8cb0daa426
