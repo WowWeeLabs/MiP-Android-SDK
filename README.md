@@ -254,7 +254,7 @@ The lower level BLE command protocol is available in our [MiP-BLE-Protocol](http
 
 License
 ---------------------------------
-MiP Android SDK is available under the Apache License, Version 2.0 license. See the [LICENSE.txt](https://raw.githubusercontent.com/WowWeeLabs/MiP-iOS-SDK/master/LICENSE.md) file for more info.
+MiP Android SDK is available under the Apache License, Version 2.0 license. See the [LICENSE.txt](https://raw.githubusercontent.com/WowWeeLabs/MiP-Android-SDK/master/LICENSE.md) file for more info.
 
 You are free to use our SDK in your own projects whether free or paid. There are no restrictions on releasing into Google Play or other stores. We do ask that you clearly differentiate your app from the official app so that users do not get confused.
 
@@ -270,7 +270,3 @@ Projects using this SDK
 ---------------------------------
 * [WowWee MiP Official App](https://play.google.com/store/apps/details?id=com.wowwee.mip&hl=en)
 * Send us a pull request to add your app here
-=======
-# MiP-Android-SDK
-Complete Android SDK and Demo project for WowWee MiP.
->>>>>>> 671355d72a49df24eb3326e2b10dea8cb0daa426
