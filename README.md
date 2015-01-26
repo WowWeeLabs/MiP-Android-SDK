@@ -31,29 +31,29 @@ Quick Installation
 
 		git clone https://github.com/WowWeeLabs/MiP-Android-SDK.git
 
-Depending on your setup and whether you are using Eclipse or Android Studio, the instructions will be slightly different howeer the library should work well with both. We have provided sample projects to get you started for both systems under the SampleProjects directory.
+	Depending on your setup and whether you are using Eclipse or Android Studio, the instructions will be slightly different howeer the library should work well with both. We have provided sample projects to get you started for both systems under the SampleProjects directory.
 
 2. If using Eclipse, Create a new project by going to _File->_New_->_Project_. The simplest application is an Android Application Project.
 
-![](Images/New-Eclipse-Project.png)
+	![](Images/New-Eclipse-Project.png)
 
 3. The most important thing to set when creating a new project is to make sure that you set the Android Minimum SDK to version 4.3. Versions of Android below 4.3 do not include the necessary Bluetooth Low Energy APIs so cannot support MiP.
 
-![](Images/Android-SDK-Version.png)
+	![](Images/Android-SDK-Version.png)
 
 4. Open the project explorer in Eclipse and drag the **WowWee-Bluetooth-Robot-Library.jar** file to the libs directory for your project.
 
-![](Images/Import-Library-Copy.png)
+	![](Images/Import-Library-Copy.png)
 
-Your project should look like the following in the project explorer
+	Your project should look like the following in the project explorer
 
-![](Images/Project-Explorer.png)
+	![](Images/Project-Explorer.png)
 
 5. Confirm that the jar library is added to your project by going into _Project_->_Properties_, then go to _Java Build Path_ then _Libraries_ then press the down arrow on _Android Private Libraries_. On older versions of the Android SDK tools, the library is not automatically added into here, so you will need to manually add it by pressing _Add Jar_.
 
-    If the library appears like the screenshot then you don't need to do anything. Click _OK_ to close the project properties.
+	If the library appears like the screenshot then you don't need to do anything. Click _OK_ to close the project properties.
 
-![](Images/Project-Library-Settings.png)
+	![](Images/Project-Library-Settings.png)
 
 6. In the AndroidManifest.xml, add the following lines under the root manifest tag if they do not already exist:
 
@@ -61,12 +61,12 @@ Your project should look like the following in the project explorer
 		<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
 		<uses-feature android:name="android.hardware.bluetooth" android:required="true"/>
 
-Also under the <application> section add the following under the application section:
+	Also under the <application> section add the following under the application section:
 
 		<service android:name="com.wowwee.bluetoothrobotcontrollib.BluetoothLeService" android:enabled="true"/>
 
 
-Your AndroidManifest.xml \<application\> section should look similar to the following:
+	Your AndroidManifest.xml \<application\> section should look similar to the following:
 
 		<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 				package="com.example.mymipapp"
