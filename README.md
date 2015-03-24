@@ -7,7 +7,7 @@ The free MiP Android SDK lets you control your [WowWee MiP robot](www.meetmip.co
 
 A list of devices we expect to be compatible is listed [on our website](http://www.wowwee.com/mip/compatibility).
 
-There is also an [iOS SDK](https://github.com/WowWeeLabs/MiP-iOS-SDK) and [PhoneGap SDK](https://github.com/WowWeeLabs/MiP-PhoneGap-SDK) version available.
+Pre-built official SDKs are also available for [iOS](https://github.com/WowWeeLabs/MiP-iOS-SDK) and also [PhoneGap](https://github.com/WowWeeLabs/MiP-PhoneGap-SDK).
 
 For information on WowWee products visit: <http://www.wowwee.com>
 
