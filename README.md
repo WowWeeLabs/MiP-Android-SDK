@@ -56,7 +56,7 @@ Quick Installation
 	![](Images/Project-Library-Settings.png)
 
 6. In the AndroidManifest.xml, add the following lines under the root manifest tag if they do not already exist:
-
+		<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 		<uses-permission android:name="android.permission.BLUETOOTH"/>
 		<uses-feature android:name="android.hardware.bluetooth_le" android:required="true"/>
 		<uses-feature android:name="android.hardware.bluetooth" android:required="true"/>
