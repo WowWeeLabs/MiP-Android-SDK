@@ -23,7 +23,9 @@ import android.os.Handler;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainMenuActivity extends FragmentActivity implements MipRobotInterface{
@@ -111,6 +113,14 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 			}
 		}
 			break;
+		case R.id.weight:
+		{
+			List<MipRobot> mips = MipRobotFinder.getInstance().getMipsConnected();
+			for (MipRobot mip : mips) {
+				mip.readMipSensorWeightLevel();
+			}
+		}
+			break;
 		case R.id.drive:
 			DriveViewFragment fragment = new DriveViewFragment();
 			FragmentManager fragmentManager = getSupportFragmentManager();
@@ -120,6 +130,7 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 			transaction.commit();
 			break;
 		}
+		
 	}
 
 	private void scanLeDevice(final boolean enable) {
@@ -196,8 +207,10 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 	@Override
 	public void mipRobotDidReceiveWeightReading(byte value,
 			boolean leaningForward) {
+		final String weightLevel = "level " + value + "!";
+		updateWeightButtonLable(weightLevel);
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -244,10 +257,39 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 							  }
 						 }
 					}
-				}, 3000);
+				}, 1);
 				 
             }
         }
 	};
 
+	private final void updateWeightButtonLable(final String string)
+	{
+		 try {
+	            runOnUiThread(new Runnable() {
+	            final	Button button = (Button) findViewById(R.id.weight);
+	                @Override
+	                public void run() {
+	            	  
+	            		Log.d("MainMenuActivity", "mipRobotDidReceiveWeightReading " + string);
+	            		
+	            		button.setText(string);
+	               
+	            		Handler handler = new Handler();
+	            		handler.postDelayed(new Runnable(){
+	            		@Override
+	            		      public void run(){
+	            			 if(button.getText().toString().compareTo("Weight Level") !=0)
+	            			 {
+	            				 updateWeightButtonLable("Weight Level");
+	            			 }
+	            		   }
+	            		}, 5);
+	                }
+	            });
+	            Thread.sleep(300);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+	}
 }

@@ -57,14 +57,20 @@
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:onClick="buttonOnclickHandler"/>
-		
+		<Button 
+		    android:id="@+id/weight"
+		    android:text="Weight Level"
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:onClick="buttonOnclickHandler"/>			
 		<Button 
 		    android:id="@+id/drive"
 		    android:text="Drive"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:onClick="buttonOnclickHandler"/>
-		
+
+	
 	</LinearLayout>
 	
 	<FrameLayout
