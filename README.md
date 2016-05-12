@@ -5,7 +5,7 @@ WowWee MiP Android SDK
 
 The free MiP Android SDK lets you control your [WowWee MiP robot](www.meetmip.com) on devices running Android 4.3 and above with Bluetooth Low Energy chipsets. To use this SDK you will also need a physical MiP robot.
 
-A list of devices we expect to be compatible is listed [on our website](http://www.wowwee.com/mip/compatibility).
+Not all devices are compatible due to differences between manufactorers. Please try your device to see if it can work properly.
 
 Pre-built official SDKs are also available for [iOS](https://github.com/WowWeeLabs/MiP-iOS-SDK), [PhoneGap](https://github.com/WowWeeLabs/MiP-PhoneGap-SDK), [Windows](https://github.com/WowWeeLabs/MiP-Windows-SDK.git) and [JavaScript (Node.js)](https://github.com/WowWeeLabs/MiP-Node.js-SDK.git).
 
