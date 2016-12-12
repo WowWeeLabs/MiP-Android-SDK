@@ -178,7 +178,7 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 	}
 
 	@Override
-	public void mipRobotDidReceiveHardwareVersion(int mipHardwareVersion,
+	public void mipRobotDidReceiveHardwareVersion(MipRobot mip,int mipHardwareVersion,
 			int mipVoiceFirmwareVersion) {
 		// TODO Auto-generated method stub
 		
@@ -192,20 +192,20 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 	}
 
 	@Override
-	public void mipRobotDidReceiveVolumeLevel(int mipVolume) {
+	public void mipRobotDidReceiveVolumeLevel(MipRobot mip,int mipVolume) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mipRobotDidReceiveIRCommand(ArrayList<Byte> irDataArray,
+	public void mipRobotDidReceiveIRCommand(MipRobot mip,ArrayList<Byte> irDataArray,
 			int length) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mipRobotDidReceiveWeightReading(byte value,
+	public void mipRobotDidReceiveWeightReading(MipRobot mip,byte value,
 			boolean leaningForward) {
 		final String weightLevel = "level " + value + "!";
 		updateWeightButtonLable(weightLevel);
@@ -291,5 +291,23 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 	        } catch (InterruptedException e) {
 	            e.printStackTrace();
 	        }
+	}
+
+	@Override
+	public void mipRobotDidReceiveClapDetectionStatusIsEnabled(MipRobot arg0, boolean arg1, long arg2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mipRobotDidReceiveGesture(MipRobot arg0, byte arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mipRobotDidReceiveNumberOfClaps(MipRobot arg0, int arg1) {
+		// TODO Auto-generated method stub
+		
 	}
 }
