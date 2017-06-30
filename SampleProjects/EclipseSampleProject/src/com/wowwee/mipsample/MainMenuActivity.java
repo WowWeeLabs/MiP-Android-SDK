@@ -3,11 +3,13 @@ package com.wowwee.mipsample;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+import java.util.Random;
 
 import com.wowwee.bluetoothrobotcontrollib.MipCommandValues;
 import com.wowwee.bluetoothrobotcontrollib.sdk.MipRobot;
 import com.wowwee.bluetoothrobotcontrollib.sdk.MipRobotFinder;
+import com.wowwee.bluetoothrobotcontrollib.minionmip.sdk.MinionMipRobot;
+import com.wowwee.bluetoothrobotcontrollib.minionmip.sdk.MinionMipCommandValues;
 import com.wowwee.bluetoothrobotcontrollib.MipRobotSound;
 import com.wowwee.bluetoothrobotcontrollib.sdk.MipRobot.MipRobotInterface;
 import com.wowwee.mipsample.R;
@@ -91,16 +93,72 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 		{
 			List<MipRobot> mips = MipRobotFinder.getInstance().getMipsConnected();
 			for (MipRobot mip : mips) {
-				mip.mipPlaySound(MipRobotSound.create(MipCommandValues.kMipSoundFile_MIP_IN_LOVE));
+				Random r = new Random();
+				// Distinguish different robot by mipRobotType
+				if(mip.mipRobotType == MipRobot.MipType_MinionMip) {
+					// cast MipRobot type to MinionMipRobot type to play minion sound
+					switch(r.nextInt(4)) {
+					case 0:
+						((MinionMipRobot)mip).playMinionMipSoundWithIndex(MinionMipCommandValues.kMinionMipSoundFile_HAPPY_DMF_MINION_HEH_HEH_BELLO);
+						break;
+						
+					case 1:
+						((MinionMipRobot)mip).playMinionMipSoundWithIndex(MinionMipCommandValues.kMinionMipSoundFile_HAPPY_KEVIN_DIAL_096_LAUGH_TOCARINA_BOCALOO);
+						break;
+						
+					case 2:
+						((MinionMipRobot)mip).playMinionMipSoundWithIndex(MinionMipCommandValues.kMinionMipSoundFile_SCREAMS_DMF_MINION_LONG_SCREAM_WHEN_WHIPED_DM2);
+						break;
+						
+					default:
+						((MinionMipRobot)mip).playMinionMipSoundWithIndex(MinionMipCommandValues.kMinionMipSoundFile_NEW_FART_WET);
+						break;
+					}
+				}
+				else {
+					switch(r.nextInt(4)) {
+					case 0:
+						mip.mipPlaySound(MipRobotSound.create(MipCommandValues.kMipSoundFile_MIP_IN_LOVE));
+						break;
+						
+					case 1:
+						mip.mipPlaySound(MipRobotSound.create(MipCommandValues.kMipSoundFile_ACTION_OUT_OF_BREATH));
+						break;
+						
+					case 2:
+						mip.mipPlaySound(MipRobotSound.create(MipCommandValues.kMipSoundFile_MIP_3));
+						break;
+						
+					default:
+						mip.mipPlaySound(MipRobotSound.create(MipCommandValues.kMipSoundFile_MIP_GOGOGO));
+						break;						
+					}
+				}				
 			}
 		}
 			break;
 		case R.id.changechest:
 		{
 			List<MipRobot> mips = MipRobotFinder.getInstance().getMipsConnected();
-			int colorIndex = getResources().getColor(R.color.white_color);
+			Random r = new Random();
+			int colorIndex;
+			switch(r.nextInt(4)) {
+				case 0:
+					colorIndex = getResources().getColor(R.color.green_color);
+					break;
+				case 1:
+					colorIndex = getResources().getColor(R.color.red_color);
+					break;
+				case 2:
+					colorIndex = getResources().getColor(R.color.orange_color);
+					break;
+				default:
+					colorIndex = getResources().getColor(R.color.white_color);
+					break;
+			
+			}
 			for (MipRobot mip : mips) {
-				// Pass RGB color to define what color you want the Chest RGB to turn
+				// Pass RGB color to define what color you want the LED to turn
 				mip.setMipChestRGBLedWithColor((byte)Color.red(colorIndex), (byte)Color.green(colorIndex), (byte)Color.blue(colorIndex), (byte) 1);
 			}
 		}
@@ -135,7 +193,12 @@ public class MainMenuActivity extends FragmentActivity implements MipRobotInterf
 
 	private void scanLeDevice(final boolean enable) {
         if (enable) {
-            MipRobotFinder.getInstance().scanForMips();
+        	// Scan for MiP/Coder MiP/Turbo Dave
+        	MipRobotFinder.getInstance().scanForAllRobots();
+        	// Scan for MiP/Coder MiP
+//        	MipRobotFinder.getInstance().scanForMips();
+        	// Scan for Turbo Dave
+//        	MipRobotFinder.getInstance().scanForMinions();
         } else {
             MipRobotFinder.getInstance().stopScanForMips();
         }
